@@ -25,7 +25,7 @@ const type = {
   helveticaRegular: "Helvetica",
   helveticaBold: "Helvetica-Bold",
   robotoRegular: "Roboto-Regular",
-  robotoMedium: "Roboto-Medium",
+  // robotoMedium: "Roboto-Medium",
   LatoBold: "Lato-Bold",
   LatoRegular: "Lato-Regular",
   RalewayBold: "Raleway-Bold"

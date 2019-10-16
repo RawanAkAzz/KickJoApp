@@ -48,7 +48,7 @@ class Home extends Component {
 
     return (
       // <ScrollView ref={(ref)=> {this._scrollView = ref}}>
-    <View style={{ width: dimensions.width, height:Dimensions.get('window').height/1  }}
+    <View style={{ width: dimensions.width, height:Dimensions.get('window').height/1}}
       >
         <Drawer
           type="overlay"
@@ -77,7 +77,7 @@ class Home extends Component {
           <Container style={{ backgroundColor: "transparent" }}>
             {/* <Content style={{ backgroundColor: "transparent" }}> */}
                  {Platform.OS==='android' ?
-              <View style={ { width: dimensions.width , height:Dimensions.get('window').height/1.52}}>
+              <View style={ {width: dimensions.width , height:Dimensions.get('window').height/1.3}}>
             
                 <View
                   style={[imagesCradItem, { width: dimensions.width }]}
@@ -91,7 +91,8 @@ class Home extends Component {
                     <ImageBackground
 
                       source={require("../assests/images/sportType.png")}
-                      style={imagesStyle}
+                      style={[imagesStyle,{      height:Dimensions.get('window').height/4,
+}]}
                     >
 
 
@@ -130,8 +131,9 @@ class Home extends Component {
                     <ImageBackground
 
                       source={require("../assests/images/ACADEMIES.png")}
-                      style={imagesStyle}
-                    >
+                      style={[imagesStyle,{      height:Dimensions.get('window').height/4,
+                    }]}
+                                                 >
 
 
                       <CardItem
@@ -167,8 +169,9 @@ class Home extends Component {
                     <ImageBackground
 
                       source={require("../assests/images/COACHES.png")}
-                      style={imagesStyle}
-                    >
+                      style={[imagesStyle,{height:Dimensions.get('window').height/4,
+                    }]}
+                                                 >
 
 
                       <CardItem

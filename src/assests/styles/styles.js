@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
 	},
 
 	rowBg: {
-		width: "100%", marginLeft: 10, height: 300, marginTop: 10 
+		width: "100%", marginLeft: 10, height:Dimensions.get('window').height/1.80, marginTop: 10 
 
 	},
 
@@ -114,9 +114,10 @@ const styles = StyleSheet.create({
 
 	productImage: {
 		width: Dimensions.get('window').width/1.06,
-		height: "100%", 
+		height: Dimensions.get('window').height/1.90, 
 		 marginTop: -10,
 		//   flex: 1,
+		borderRadius:5,
 	  justifyContent:'space-between'
 
 	},

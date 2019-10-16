@@ -7,7 +7,7 @@ import {Actions} from "react-native-router-flux";
 import * as homeAction from "../actions/homeAction";
 import {connect} from "react-redux";
 // import {strings} from "../../Locales/i18n";
-import Header from "./headerWithoutArrow";
+import Header from "./header";
 import Footer from './footerPage';
 
 const IMAGE_BASE_URL = "https://bolisati1.qiotic.info/";
@@ -42,6 +42,7 @@ class SubCategory extends Component {
  
   render() {
     const { lang} = this.props;
+    const screenHeight= Dimensions.get('window').height;
     const items = [
         { img:require("../assests/images/1.png"), name: 'Volleyball'},
         {img:require("../assests/images/1.png"), name: 'EMERALD',  },
@@ -58,8 +59,15 @@ class SubCategory extends Component {
       ];
     return (
       // <ScrollView ref={(ref)=> {this._scrollView = ref}}>
-       <ImageBackground source={require('../assests/images/Background.png')} style={{ width:"100%", height:Dimensions.get('window').height/1.04 }}>
-
+       <ImageBackground source={require('../assests/images/Background.png')} style={{ ...Platform.select({
+        ios: {
+            height:Dimensions.get('window').height/1.04,
+        },
+        android: {
+            height:Dimensions.get('window').height/0.96
+        }
+    }),width:"100%" }}>
+          
         <Drawer
           type="overlay"
           side="right"
@@ -82,7 +90,6 @@ class SubCategory extends Component {
         >
           <Header openDrawer={this.openDrawer} closeDrawer={this.closeDrawer} />
 
-          <StatusBar backgroundColor="#1e2131" barStyle="light-content" />
   
           <Container style={{backgroundColor: "transparent"}}>
             <Content style={{backgroundColor: "transparent"}}>
@@ -91,7 +98,7 @@ class SubCategory extends Component {
         itemDimension={130}
         items={items}
         style={styles.gridView}
-        style={{    marginTop:20}}
+        // style={{    marginTop:20}}
         // staticDimension={300}
         // fixed
         // spacing={20}
@@ -117,12 +124,11 @@ class SubCategory extends Component {
 }
 const styles = StyleSheet.create({
     gridView: {
-      marginTop: 20,
-      flex: 1,
+     height:"100%"
     },
     itemContainer: {
       justifyContent: 'center',
-      borderRadius: 5,
+      borderRadius: 10,
       padding: 10,
       backgroundColor:"white",
       height: 140,

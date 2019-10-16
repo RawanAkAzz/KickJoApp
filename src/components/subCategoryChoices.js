@@ -17,7 +17,7 @@ import Entypo from "react-native-vector-icons/Entypo";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Footer from './footerPage';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import Header from "./header";
+import Header from "./headerWithoutArrow";
 import {centerStyle} from "../theme";
 import {Actions} from "react-native-router-flux";
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Text, View, Button, Input } from "native-base";
 import { Actions } from "react-native-router-flux";
 import * as homeAction from "../actions/homeAction";
-import { Image } from "react-native";
+import { Image, Dimensions } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 
@@ -26,13 +26,14 @@ export default class RegisterApp extends Component {
                         <View style={{ marginTop: 40 , borderRadius:4, backgroundColor: 'transparent',  justifyContent: 'center',
                                 borderColor: "white",
                                 alignContent: 'center',
-                                width: 350,
-                                height:40,
+                                width: Dimensions.get('window').width/1.20,
+                                height:Dimensions.get('window').height/14,
                                 borderWidth: 2,
+                                borderRadius:5,
                                 alignSelf: "center",}}>
 
                             
-                                <Input keyboardType="numeric" style={{color:'white',lineHeight:10,fontSize:9 , paddingLeft:20}} >Phone Number:
+                                <Input keyboardType="numeric" style={{color:'white',lineHeight:10,fontSize:'12px' , paddingLeft:20}} >code:
                             </Input> 
 
 

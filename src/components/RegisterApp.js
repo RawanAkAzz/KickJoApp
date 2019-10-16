@@ -26,13 +26,14 @@ export default class RegisterApp extends Component {
                         <View style={{ marginTop: 40 , borderRadius:4, backgroundColor: 'transparent',  justifyContent: 'center',
                                 borderColor: "white",
                                 alignContent: 'center',
-                                width: 350,
-                                height:40,
+                                width: Dimensions.get('window').width/1.20,
+                                height:Dimensions.get('window').height/14,
                                 borderWidth: 2,
+                                borderRadius:5,
                                 alignSelf: "center",}}>
 
                             
-                                <Input keyboardType='numeric' style={{color:'white',lineHeight:10,fontSize:9 , paddingLeft:20}} >Phone Number: 
+                                <Input keyboardType='numeric' style={{color:'white',lineHeight:10,fontSize:'12px' , paddingLeft:20}} >Phone Number: 
                             </Input> 
 
 
@@ -51,13 +52,13 @@ export default class RegisterApp extends Component {
                                 }}
                                 onPress={() => { Actions.Register() }}
                             >
-                                <Text style={{ color: "black", fontFamily: "AnyelirScriptBoldItalic" }}>Register</Text>
+                                <Text style={{ color: "black", fontFamily: "AnyelirScriptBoldItalic" , fontSize:'19px'}}>Send</Text>
 
                             </Button>
 
                         </View>
                         <View>
-                            <Text style={{ marginTop: 20, marginBottom: 20, fontSize: 8, color: '#BCBCBC', lineHeight: 9, textAlign: 'center', alignItems: 'center' }}>
+                            <Text style={{ marginTop: 20, marginBottom: 20, fontSize:'11px', color: '#BCBCBC', lineHeight: 9, textAlign: 'center', alignItems: 'center' }}>
                                 or
                  </Text>
                         </View>
@@ -67,7 +68,7 @@ export default class RegisterApp extends Component {
                                 >
 
                                     <Image source={require("../assests/images/Facebook.png")} style={{ marginRight: -10 }} />
-                                    <Text style={{ color: "white", fontSize: 7, alignSelf: 'center', letterSpacing: 0.01, lineHeight: 6 }}>SIGN UP WITH FACEBOOK</Text>
+                                    <Text style={{ color: "white", fontSize: '6px', alignSelf: 'center'}}>SIGN UP WITH FACEBOOK</Text>
 
                                 </Button>
                             </View>
@@ -76,7 +77,7 @@ export default class RegisterApp extends Component {
                                 >
 
                                     <Image source={require("../assests/images/google.png")} style={{ marginRight: -10 }} />
-                                    <Text style={{ color: "white", fontSize: 7, alignSelf: 'center', letterSpacing: 0.01, lineHeight: 6 }}>SIGN UP WITH GOOGL</Text>
+                                    <Text style={{ color: "white", fontSize: '6px', alignSelf: 'center' }}>SIGN UP WITH GOOGL</Text>
 
                                 </Button>
                             </View>
@@ -87,7 +88,7 @@ export default class RegisterApp extends Component {
 
                         </View>
                         <View>
-                            <Text style={{ marginTop: 20, marginBottom: 20, fontSize: 8, color: '#BCBCBC', lineHeight: 9, textAlign: 'center', alignItems: 'center' }}>
+                            <Text style={{ marginTop: 20, marginBottom: 20, fontSize:'11px', color: '#BCBCBC', lineHeight: 9, textAlign: 'center', alignItems: 'center' }}>
                                 اللغة العربية</Text>
                         </View>
                     </View>

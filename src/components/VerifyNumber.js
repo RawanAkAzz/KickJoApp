@@ -24,7 +24,7 @@ export default class Number extends Component {
 
                 <View style={{ justifyContent: 'space-between' }}>
                     <View style={{ alignItems: 'flex-start', marginLeft: 30, marginTop: 40 }}>
-                        <TouchableOpacity onPress={this.onPress}>
+                        <TouchableOpacity    onPress={() => Actions.pop()}>
                             <Icon
                                 name="md-arrow-back"
                                 style={{
@@ -33,7 +33,7 @@ export default class Number extends Component {
                                     height: 30,
                                     justifyContent: "center",
                                 }}
-                            // onPress={() => Actions.pop()}
+                         
                             />
                         </TouchableOpacity>
                     </View>

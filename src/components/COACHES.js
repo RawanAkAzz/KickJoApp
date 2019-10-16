@@ -47,8 +47,15 @@ class COACHES extends Component {
 
     return (
       // <ScrollView ref={(ref)=> {this._scrollView = ref}}>
-      <View style={{ width: dimensions.width, height:Dimensions.get('window').height/1.04}}
-      >
+      <View style={{ width: dimensions.width , ...Platform.select({
+        ios: {
+            height:Dimensions.get('window').height/1.01,
+        },
+        android: {
+            height:Dimensions.get('window').height/0.96
+        }
+    })
+  }}>
 
         <Header openDrawer={this.openDrawer} closeDrawer={this.closeDrawer} />
 
@@ -66,7 +73,10 @@ class COACHES extends Component {
                 <TouchableOpacity
                   onPress={() =>
                     Actions.CoachesDesc()
-                  }
+                  } 
+                  // style={{  borderWidth:1,
+                  //     borderRadius:5,
+                  //     borderColor:'red',}}
                 >
                   <ImageBackground
 
@@ -78,12 +88,17 @@ class COACHES extends Component {
                       paddingTop: 200,
                       alignItems: "center",
                       marginLeft: 10,
+                      // borderRadius:5,
+                      //  borderWidth:1,
+                      //  borderColor:"transparent",
                       marginRight: 10,
                       justifyContent: "center",
                       flexDirection: "row",
                       resizeMode: 'contain',
 
                     }}
+                    imageStyle={{ borderRadius: 6}}
+
                   >
 
 
@@ -91,7 +106,8 @@ class COACHES extends Component {
                       style={{
                         backgroundColor: "transparent",
                         marginTop: 50,
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        
                       }}
                     >
 
@@ -102,7 +118,7 @@ class COACHES extends Component {
                             // marginBottom: Dimensions.get('window').height/7
                           }}>
                             
-                          <Text style={{ color: "white", fontSize: 18, fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 , marginBottom:Dimensions.get('window').height/7}}>
+                          <Text style={{ color: "white", fontSize: '24px', fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 , marginBottom:Dimensions.get('window').height/7}}>
                             Name
                               </Text>
                         </View>
@@ -112,7 +128,7 @@ class COACHES extends Component {
                             marginTop:-50
                           }}>
                             
-                          <Text style={{ color: "white", fontSize: 18, fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 }}>
+                          <Text style={{ color: "white", fontSize: '24px', fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 }}>
                             Name
                               </Text>
                         </View>
@@ -139,7 +155,7 @@ class COACHES extends Component {
                                 style={{
                                   color: "white",
                                   textAlign: "center",
-                                  fontSize: 11,
+                                  fontSize: '15px',
 
                                 }}
                               >
@@ -174,7 +190,7 @@ class COACHES extends Component {
                               style={{
                                 color: "white",
                                 textAlign: "center",
-                                fontSize: 11,
+                                fontSize: '15px',
 
                               }}
                             >
@@ -226,6 +242,8 @@ class COACHES extends Component {
                       resizeMode: 'contain',
 
                     }}
+                      imageStyle={{ borderRadius: 6}}
+
                   >
 
 
@@ -244,7 +262,7 @@ class COACHES extends Component {
                             // marginBottom: Dimensions.get('window').height/7
                           }}>
                             
-                          <Text style={{ color: "white", fontSize: 18, fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 , marginBottom:Dimensions.get('window').height/7}}>
+                          <Text style={{ color: "white", fontSize: '24px', fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 , marginBottom:Dimensions.get('window').height/7}}>
                             Name
                               </Text>
                         </View>
@@ -254,7 +272,7 @@ class COACHES extends Component {
                             marginTop:-50
                           }}>
                             
-                          <Text style={{ color: "white", fontSize: 18, fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 }}>
+                          <Text style={{ color: "white", fontSize: '24px', fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 }}>
                             Name
                               </Text>
                         </View>
@@ -281,7 +299,7 @@ class COACHES extends Component {
                                 style={{
                                   color: "white",
                                   textAlign: "center",
-                                  fontSize: 11,
+                                  fontSize: '15px',
 
                                 }}
                               >
@@ -316,7 +334,7 @@ class COACHES extends Component {
                               style={{
                                 color: "white",
                                 textAlign: "center",
-                                fontSize: 11,
+                                fontSize: '15px',
 
                               }}
                             >
@@ -363,6 +381,7 @@ class COACHES extends Component {
                       resizeMode: 'contain',
 
                     }}
+                    imageStyle={{ borderRadius: 6}}
                   >
 
 
@@ -379,7 +398,7 @@ class COACHES extends Component {
                           style={{
                             marginTop: -50
                           }}>
-                          <Text style={{ color: "#ffffff", fontSize: 18, fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 }}>
+                          <Text style={{ color: "#ffffff", fontSize: '24px', fontFamily: "AnyelirScriptBoldItalic", letterSpacing: -0.11 }}>
                             Name
                               </Text>
                         </View>
@@ -404,7 +423,7 @@ class COACHES extends Component {
                                 style={{
                                   color: "white",
                                   textAlign: "center",
-                                  fontSize: 11,
+                                  fontSize: '15px',
 
                                 }}
                               >

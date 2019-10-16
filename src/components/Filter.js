@@ -33,7 +33,7 @@ import Carousel, { Pagination } from "react-native-snap-carousel";
 import { imagesStyle, imagesCradItem } from "../assests/styles/homeStyles";
 import { Actions } from "react-native-router-flux";
 import { Images, Metrics, Colors } from "../Themes";
-import Header from "./header";
+import Header from "./headerWithoutArrow";
 import Footer from './footerPage';
 import * as homeAction from "../actions/homeAction";
 import { connect } from "react-redux";
@@ -166,7 +166,14 @@ export default class Home extends Component {
         console.log("rende my week", myWeek)
         return (
 
-            <View style={{ width: Dimensions.width, height: "100%", backgroundColor: "white" }}
+            <View style={{ width: Dimensions.width,...Platform.select({
+                ios: {
+                    height:Dimensions.get('window').height/1.04,
+                },
+                android: {
+                    height:Dimensions.get('window').height/0.96
+                }
+            }),backgroundColor: "white" }}
             >
                 <Drawer
                     type="overlay"
@@ -191,27 +198,29 @@ export default class Home extends Component {
                     <Header openDrawer={this.openDrawer} closeDrawer={this.closeDrawer} />
 
                     <ScrollView>
-                        <View style={{ flexDirection: 'row',  fontFamily: '', marginBottom: 20, justifyContent: 'space-between' }}>
-                            {/* <View> */}
-                                 <Item
+                    <Item
                                 regular
                                 style={{
-                                    marginLeft: -30,
-                                    marginRight: 30,
-                                    height: 60,
-                                    width: 470,
+                                    
+                                    height: 70,
+                                    width:'100%',
                                     backgroundColor: "rgba(240,240,240,0.2) "
                                 }}
-                            > 
-                            <View>
-                                <Text style={{ textAlign:'left', marginLeft:50, color: "#4a4a4a", fontSize: 32,  fontFamily: "AnyelirScriptBoldItalic", }}>FILTERS</Text>
+                            >      
+                                               <View style={{ flexDirection: 'row', backgroundColor: "rgba(240,240,240,0.2) ",width:Dimensions.get('window').width/1.1,  marginBottom: 20, justifyContent: 'space-btween',alignItems:'center' }}>
+                            {/* <View> */}
+                                
+                            <View style={{width:'50%'}}>
+                                <Text style={{ textAlign:'left', color: "#4a4a4a",marginLeft:10,marginTop:20, textAlign:"center", fontSize: 32,  fontFamily: "AnyelirScriptBoldItalic", }}>FILTERS</Text>
                             </View>
                             
-                            <View>
-                                <Text style={{ color: 'green', marginTop: 0, marginLeft: 216 }}>Done</Text>
+                            <View style={{width:'50%',justifyContent:'center',alignItems:'flex-end',marginLeft:20,marginTop:20,}}>
+                                                                <Text style={{ color: 'green',}}>Done</Text>
                             </View>
-                            </Item></View>
-                        <View style={{ flexDirection: "row", marginBottom: 10 }}>
+                            
+                           </View>
+                            </Item>
+                        <View style={{ flexDirection: "row", marginTop: 20 , height:30}}>
                             {/* <Item
                                 regular
                                 style={{

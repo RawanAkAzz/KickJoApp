@@ -109,7 +109,7 @@ export default class CoachesDesc extends Component {
     //             <View
     //                 style={
     //                     rowData.id == this.state.index
-    //                         ? [styles.dot, { backgroundColor: "#0e1130" }]
+    //                         ? [styles.dot, { backgroundColor: "#0e'15px'30" }]
     //                         : [styles.dot, { backgroundColor: "#aeaeae" }]
     //                 }
     //             />
@@ -132,15 +132,22 @@ export default class CoachesDesc extends Component {
         var dot_index1 = 0;
 
         return (
-            <View style={{ width: dimensions.width, height: Dimensions.get('window').height / 1.04 }}
-            >
+            <View style={{width: dimensions.width, ...Platform.select({
+                ios: {
+                    height:Dimensions.get('window').height/1.04,
+                },
+                android: {
+                    height:Dimensions.get('window').height/0.96
+                }
+            })}}> 
+        
 
                 <Header openDrawer={this.openDrawer} closeDrawer={this.closeDrawer} />
 
                 <StatusBar backgroundColor="#1e2131" barStyle="light-content" />
 
-                <Container style={{ backgroundColor: "transparent" }}>
-                    <Content style={{ backgroundColor: "transparent" }}>
+                <Container style={{ BackgroundColor:'white' , }}>
+                    <Content style={{ backgroundColor: "white" }}>
 
                         <View>
 
@@ -162,6 +169,8 @@ export default class CoachesDesc extends Component {
                                                 <Image
                                                     style={styles.productImage}
                                                     source={item.productImage}
+                                                    imageStyle={{ borderRadius: 6}}
+
                                                 />
                                             </View>
                                         );
@@ -174,8 +183,8 @@ export default class CoachesDesc extends Component {
                                                 <View
                                                     style={
                                                         item.id - 1 == this.state.dot_index
-                                                            ? [styles.dot, { backgroundColor: "#0e1130" }]
-                                                            : [styles.dot, { backgroundColor: "#aeaeae" }]
+                                                            ? [styles.dot, { backgroundColor: "white" }]
+                                                            : [styles.dot, { backgroundColor: "gray" }]
                                                     }
                                                 />
                                             </View>
@@ -190,10 +199,10 @@ export default class CoachesDesc extends Component {
 
                         </View>
                         <View style={{ marginTop: Dimensions.get('window').height / 300, marginLeft: 20 }}>
-                            <Text style={{ color: "black", fontSize: 16, fontFamily: 'AnyelirScriptBoldItalic', marginBottom: 10, marginRight: -20 }}>JIHAD RAMI SAMAWI</Text>
+                            <Text style={{ color: "black", fontSize: '22px', fontFamily: 'AnyelirScriptBoldItalic', marginBottom: 10, marginRight: -20 }}>JIHAD RAMI SAMAWI</Text>
 
                         </View>
-                        <Text style={{ fontSize: 11, color: "black", paddingLeft: 20 }}>
+                        <Text style={{ fontSize: '15px', color: "black", paddingLeft: 20 }}>
                             Lorem ipsum dolor sit amet, conseadipiLorem ipsum dolor si amet, conseadipiLorem
                                   </Text>
                         <View style={{ marginTop: 10 }}>
@@ -204,33 +213,34 @@ export default class CoachesDesc extends Component {
                                     width: "90%",
                                     flex: 1,
                                     height: 70,
-                                    shadowOffset: {
-                                        width: 0,
-                                        height: 2
-                                    },
-                                    shadowOpacity: 0.2,
-                                    shadowRadius: 1.84,
-                                    elevation: 2,
+                                    backgroundColor:'#FCFBFB',
+                                    // shadowOffset: {
+                                    //     width: 0,
+                                    //     height: 2
+                                    // },
+                                    // shadowOpacity: 0.2,
+                                    // shadowRadius: 1.84,
+                                    // elevation: 2,
                                     marginLeft: 20,
                                     marginRight: 20,
                                     marginBottom: 10,
                                 }}
                             >
                                 <View style={{ flexDirection: 'column', marginBottom: 2 }}>
-                                    <Text style={{ marginLeft: 20, fontSize: 16, color: "black", lineHeight: 24, textAlign: 'left', fontFamily: 'AnyelirScriptBoldItalic', marginTop: 10, marginRight: 10 }}>
+                                    <Text style={{ marginLeft: 20, fontSize: '22px', color: "black", lineHeight: 24, textAlign: 'left', fontFamily: 'AnyelirScriptBoldItalic', marginTop: 10, marginRight: 10 }}>
                                         BIO
                                 </Text>
-                                    <Text style={{ marginLeft: 10, fontSize: 11, color: "black", lineHeight: 12, textAlign: 'left', color: '#8d8d8d', marginBottom: 10 }}>
+                                    <Text style={{ marginLeft: 10, fontSize: '15px', lineHeight: 12, textAlign: 'left', color: '#8d8d8d', marginBottom: 10 }}>
                                         Lorem ipsum dolor sit amet, conseadipiLorem ipsum dolor si
                                         amet, conseadipiLorem ipsum dolor sit ame.
                                     </Text></View>
                             </Item>
                         </View>
                         <View style={{ marginTop: 10, marginLeft: 20 }}>
-                            <Text style={{ color: "black", fontSize: 16, fontFamily: 'AnyelirScriptBoldItalic', marginBottom: 10, marginRight: -20 }}>SKILLS</Text>
+                            <Text style={{ color: "black", fontSize:'22px', fontFamily: 'AnyelirScriptBoldItalic', marginBottom: 10, marginLeft: 20 }}>SKILLS</Text>
 
                         </View>
-                        <Text style={{ fontSize: 11, color: "black", paddingLeft: 20 }}>
+                        <Text style={{ fontSize: '15px', color: "black", paddingLeft: 20 }}>
                             Lorem ipsum dolor sit amet, conseadipiLorem ipsum dolor si amet, conseadipiLorem
                                   </Text>
                         <View style={{ marginTop: 10 }}>
@@ -241,23 +251,24 @@ export default class CoachesDesc extends Component {
                                     width: "90%",
                                     flex: 1,
                                     height: 70,
-                                    shadowOffset: {
-                                        width: 0,
-                                        height: 2
-                                    },
-                                    shadowOpacity: 0.2,
-                                    shadowRadius: 1.84,
-                                    elevation: 2,
+                                    backgroundColor:'#FCFBFB',
+                                    // shadowOffset: {
+                                    //     width: 0,
+                                    //     height: 2
+                                    // },
+                                    // shadowOpacity: 0.2,
+                                    // shadowRadius: 1.84,
+                                    // elevation: 2,
                                     marginLeft: 20,
                                     marginRight: 20,
                                     marginBottom: 10,
                                 }}
                             >
                                 <View style={{ flexDirection: 'column', marginBottom: 2 }}>
-                                    <Text style={{ marginLeft: 20, fontSize: 16, color: "black", lineHeight: 24, textAlign: 'left', fontFamily: 'AnyelirScriptBoldItalic', marginTop: 10, marginRight: 10 }}>
+                                    <Text style={{ marginLeft: 20, fontSize:'22px', color: "black", lineHeight: 24, textAlign: 'left', fontFamily: 'AnyelirScriptBoldItalic', marginTop: 10, marginRight: 10 }}>
                                         CERTIFICATE
                                 </Text>
-                                    <Text style={{ marginLeft: 10, fontSize: 11, color: "black", lineHeight: 12, textAlign: 'left', color: '#8d8d8d', marginBottom: 10 }}>
+                                    <Text style={{ marginLeft: 10, fontSize: '15px', color: "black", lineHeight: 12, textAlign: 'left', color: '#8d8d8d', marginBottom: 10 }}>
                                         Lorem ipsum dolor sit amet, conseadipiLorem ipsum dolor si
                                         amet, conseadipiLorem ipsum dolor sit ame.
                                     </Text></View>
@@ -285,12 +296,12 @@ export default class CoachesDesc extends Component {
                                         />
                                         {!this.state.show ? (
 
-                                            <Text style={{ fontSize: 16, color: "black", paddingLeft: 20, color: '#30832e' }}>
+                                            <Text style={{ fontSize:'22px', paddingLeft: 20, color: '#30832e' }}>
                                                 00962 65....
                 </Text>
                                         ) :
 
-                                            <Text style={{ fontSize: 16, color: "black", paddingLeft: 20, color: '#30832e' }}>
+                                            <Text style={{ fontSize:'22px', paddingLeft: 20, color: '#30832e' }}>
                                                 00962 6578910
                                                              </Text>
 
@@ -330,12 +341,12 @@ export default class CoachesDesc extends Component {
                                         />
                                         {!this.state.hide ? (
 
-                                            <Text style={{ fontSize: 16, color: "black", paddingLeft: 20, color: '#30832e' }}>
+                                            <Text style={{ fontSize: '22px', color: "black", paddingLeft: 20, color: '#30832e' }}>
                                                 ammar@...
 </Text>
                                         ) :
 
-                                            <Text style={{ fontSize: 16, color: "black", paddingLeft: 20, color: '#30832e' }}>
+                                            <Text style={{ fontSize: '22px', color: "black", paddingLeft: 20, color: '#30832e' }}>
                                               ammar@yahoo.com
                  </Text>
 

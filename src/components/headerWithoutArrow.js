@@ -36,7 +36,7 @@ class HeaderCustomWithoutArrow extends Component {
                     height: 30,
                     justifyContent: "center",
                     marginRight: 20,
-                    marginTop: 20,
+                    marginBottom: Dimensions.get('window').height/65,
                     marginLeft: 20
                   }}
                 onPress={() => Actions.pop()}
@@ -83,7 +83,7 @@ class HeaderCustomWithoutArrow extends Component {
                     justifyContent: "center",
                     marginRight: 20,
                     marginLeft: 20,
-                    marginTop: 20
+                    marginBottom: Dimensions.get('window').height/65,
                   }}
                 />
               </TouchableOpacity>

@@ -13,7 +13,7 @@ export default headerProfile = props => {
 const styles = StyleSheet.create({
   header: {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height/3.90,
+    height: Dimensions.get('window').height/5,
     alignItems: 'center',
     justifyContent: 'center',
   },

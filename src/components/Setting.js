@@ -43,8 +43,8 @@ const dimensions = Dimensions.get("window");
              <Image style={{ marginTop: 20, marginLeft: 30 }} source={require('../assests/images/left.png')} />
            </View>
             <View style={{}}>
-          <Text style={{ fontSize: 32, marginBottom: 400, fontFamily: 'AnyelirScriptBoldItalic', alignSelf: 'center', lineHeight: 49, color: 'white' }}>
-            Settings
+          <Text style={{ fontSize:'42px', marginBottom: 400, fontFamily: 'AnyelirScriptBoldItalic', alignSelf: 'center', lineHeight: 49, color: 'white' }}>
+            SETTINGS
                       </Text>
         </View>
         <View>
@@ -55,10 +55,10 @@ const dimensions = Dimensions.get("window");
                   <Image source={require('../assests/images/profile.png')} style={{ marginLeft: 10 }} />
 
 
-                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 20, fontSize: 12, marginLeft: 10, alignSelf: 'left' }}>Account</Text>
+                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 20, fontSize: '16px', marginLeft: 10, }}>Account</Text>
                 </Left>
                 <Right>
-                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 14, fontSize: 12, marginLeft: 30, alignSelf: 'left' }}>Email</Text>
+                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 14, fontSize: '16px', marginLeft: 30, }}>Email</Text>
                 </Right>
               </View>
             </ListItem>
@@ -68,10 +68,10 @@ const dimensions = Dimensions.get("window");
                   <Image source={require('../assests/images/profile.png')} style={{ marginLeft: 10 }} />
 
 
-                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 20, fontSize: 12, marginLeft: 10, alignSelf: 'left' }}>Language</Text>
+                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 20, fontSize: '16px', marginLeft: 10, }}>Language</Text>
                 </Left>
                 <Right>
-                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 14, fontSize: 12, marginLeft: 30, alignSelf: 'left', }}>English</Text>
+              <Text style={{ justifyContent: 'center', color: "white", fontSize: '16px', marginLeft: 30, width:Dimensions.get('window').width/6}}>English</Text>
                 </Right>
               </View>
             </ListItem>
@@ -81,7 +81,7 @@ const dimensions = Dimensions.get("window");
                   <Image source={require('../assests/images/profile.png')} style={{ marginLeft: 10 }} />
 
 
-                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 20, fontSize: 12, marginLeft: 10, alignSelf: 'left' }}>Notifications</Text>
+                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 20, fontSize: '16px', marginLeft: 10, }}>Notifications</Text>
                 </Left>
                   
                   <View >
@@ -106,7 +106,7 @@ const dimensions = Dimensions.get("window");
                   <View style={{ flexDirection: "row", justifyContent:'flex-start', marginRight:30}}>
                 
                   <Image source={require('../assests/images/profile.png')} style={{ marginLeft: 10 }} />
-                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 20, fontSize: 12, marginLeft: 30, alignSelf: 'left' }}>Privacy</Text>
+                  <Text style={{ justifyContent: 'center', color: "white", lineHeight: 20, fontSize: '16px', marginLeft: 30, }}>Privacy</Text>
                  
                 
                  

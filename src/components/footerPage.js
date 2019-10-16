@@ -8,6 +8,7 @@ import {centerStyle,headerStyle,menuIcon} from '../theme';
 
 // import Icon from "react-native-vector-icons/FontAwesome";
 const dimensions=Dimensions.get('window');
+const screenHeight = Dimensions.get('window').height;
 class footerPage extends Component {
  
     render(){
@@ -36,7 +37,7 @@ class footerPage extends Component {
                  
             </FooterTab>
                    :
-                   <FooterTab style={{backgroundColor:"white"  , height:"170%" }}>
+                   <FooterTab style={{backgroundColor:"white", height:screenHeight <= 500? Dimensions.get('window').height/5.78: Dimensions.get('window').height/12}}>
               <Button vertical>
                <Image source={require('../assests/images/1.png')}/>
               </Button>

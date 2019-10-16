@@ -1,4 +1,4 @@
-
+<!-- 
 ## react-native-scrollable-tab-view
 [![npm version](https://badge.fury.io/js/react-native-scrollable-tab-view.svg)](https://badge.fury.io/js/react-native-scrollable-tab-view)
 
@@ -109,4 +109,4 @@ Please attach video or gif to PR's and issues it is super helpful.
 
 ---
 
-**MIT Licensed**
+**MIT Licensed** -->

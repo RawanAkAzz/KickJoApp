@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
 import {createStore, applyMiddleware} from "redux";
-import {View,Text,StatusBar,Keyboard} from 'react-native';
+import {View,Text,StatusBar,Keyboard,Dimensions} from 'react-native';
 import {Drawer, Root} from "native-base";
 import {Provider} from 'react-redux';
 import ReduxThunk from "redux-thunk";
@@ -61,6 +61,8 @@ isReady: false,
     setTimeout(() => Keyboard.dismiss());
   };
   render() {
+    console.log(' screeeeen height ', Dimensions.get('window').height)
+
     const store = createStore(rootReducer, {}, applyMiddleware(ReduxThunk));
 
     if (this.state.loading) {

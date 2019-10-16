@@ -44,34 +44,25 @@ export default class Profile extends Component {
     render() {
         return (
 
-            <View style={{ width: "100%", height:Dimensions.get('window').height/1, backgroundColor: "red" }}
+            <View style={{ width: "100%", ...Platform.select({
+                ios: {
+                    height:Dimensions.get('window').height/1.01,
+                },
+                android: {
+                    height:Dimensions.get('window').height/0.7,
+                   
+                }
+            })
+        }}
             >
-                <Drawer
-                    type="overlay"
-                    side="right"
-                    ref={ref => {
-                        this.drawer = ref;
-                    }}
-                    // content={
-                    //   <SideBar
-                    //     navigator={this._navigator}
-                    //     closeDrawer={this.closeDrawer}
-                    //   />
-                    // }
-                    onClose={this.closeDrawer}
-                    onOpen={this.openDrawer}
-                    tapToClose={true}
-                    openDrawerOffset={0.2}
-                    panCloseMask={0.2}
-                    closedDrawerOffset={-3}
-                    styles={drawerStyles}
-                >
-                    <View style={{ width: "100%", height:Dimensions.get('window').height/10 }}>
+                {Platform.OS === 'ios' ?
+
+                    <View style={{ width: "100%", height:Dimensions.get('window').height/12 }}>
                     <LinearGradient
                 colors={['rgb(7,37,78)','rgb(18,62,69)','rgb(55,137,48)']}
                 start={{x: 0, y: 0}} end={{x: 1, y: 0}} 
             >
-            <Header title={'My Profile'}>
+            <Header title={'MY PROFILE'} >
             <View style={{ justifyContent:'flex-start'}}>
                    
             <Left>
@@ -82,10 +73,33 @@ export default class Profile extends Component {
                     color: "white",
                     width: 20,
                     height: 30,
-                    justifyContent: "center",
-                    // marginRight: 20,
-                    // marginTop: -30,
-                    // marginLeft: 20
+                    
+                  }}
+                />
+              </TouchableOpacity>
+            </Left>
+                      </View>   </Header> 
+                        </LinearGradient>
+                    </View>
+                    :
+                    <View style={{ width: "100%", height:Dimensions.get('window').height/7.6}}>
+                    <LinearGradient
+                colors={['rgb(7,37,78)','rgb(18,62,69)','rgb(55,137,48)']}
+                start={{x: 0, y: 0}} end={{x: 1, y: 0}} 
+                style={{height:150, alignItems:"center"}}
+            >
+            <Header title={'MY PROFILE'} style={{fontFamily:"AnyelirScriptBoldItalic"}}>
+            <View style={{ justifyContent:'flex-start'}}>
+                   
+            <Left>
+              <TouchableOpacity onPress={this.onPress}>
+                <Icon
+                  name="md-arrow-back"
+                  style={{
+                    color: "white",
+                    width: 20,
+                    height: 30,
+                    
                   }}
                 />
               </TouchableOpacity>
@@ -94,11 +108,18 @@ export default class Profile extends Component {
                         </LinearGradient>
                     </View>
                     
+                }
                    
                     <View style={{ flexDirection: 'column', justifyContent: 'center'}}>
-                      <View style={{justifyContent:'center', alignItems:'center',marginBottom:Dimensions.get('window').height/30,}}>
-                         <Image source={require('../assests/images/Artboard33.png')} style={{justifyContent:'center'}}/> 
-                      </View>
+                      <View style={{justifyContent:'center', alignItems:'center'}}>
+                          {Platform.OS==='ios'  ?
+                         <Image source={require('../assests/images/Artboard33.png')} style={{justifyContent:'center',marginTop:Dimensions.get('window').height/20,}}/> 
+                
+                :
+                <Image source={require('../assests/images/Artboard33.png')} style={{justifyContent:'center',marginTop:Dimensions.get('window').height/35,}}/> 
+
+                        }
+                         </View>
 
                    
                   <Text style={{ fontSize: 12, color: 'black', textAlign: 'center',}}>
@@ -148,25 +169,40 @@ export default class Profile extends Component {
                     </View>
 
                     <View style={{ width: '90%', marginTop: 20, marginBottom:20 ,  alignSelf: 'center', height: 50, paddingLeft: 2, width: 360, justifyContent: 'center', alignSelf: 'center' }}>
+                     {Platform.OS==='ios'   ?
                         <LinearGradient
                          colors={['rgb(7,37,78)','rgb(18,62,69)','rgb(55,137,48)']}
                          start={{x: 0, y: 0}} end={{x: 1, y: 0}} 
-                         style={{borderRadius:10}}
+                         style={{borderRadius:10 , width:Dimensions.get('window').width/1.20}}
                         >
-                            <TouchableOpacity style={{ alignSelf: 'center', height: 50, paddingLeft: 2, width: 600, justifyContent: 'center', alignSelf: 'center'}}
+                            <TouchableOpacity style={{ height: 50, paddingLeft: 2, width: Dimensions.get('window').width/1, justifyContent: 'center', alignSelf: 'center'}}
                             >
                                 <Text style={{ color: "white", textAlign: 'center', fontSize: 20, fontFamily: "AnyelirScriptBoldItalic" }}>
                                    SAVE CHANGES
-                                                                </Text>
+                                  </Text>
                             </TouchableOpacity>
                         </LinearGradient>
+                        :
+                        <LinearGradient
+                        colors={['rgb(7,37,78)','rgb(18,62,69)','rgb(55,137,48)']}
+                        start={{x: 0, y: 0}} end={{x: 1, y: 0}} 
+                        style={{borderRadius:10 , width:Dimensions.get('window').width/1.1 , alignSelf:"center"}}
+                       >
+                           <TouchableOpacity style={{  height: 50, paddingLeft: 2, justifyContent: 'center', alignSelf: 'center'}}
+                           >
+                               <Text style={{ color: "white", textAlign: 'center', fontSize: 20, fontFamily: "AnyelirScriptBoldItalic" }}>
+                                  SAVE CHANGES
+                                 </Text>
+                           </TouchableOpacity>
+                       </LinearGradient>
+                     }
                     </View>
 
 
 
                     <Footer />
 
-                </Drawer>
+                
             </View>
         );
     }

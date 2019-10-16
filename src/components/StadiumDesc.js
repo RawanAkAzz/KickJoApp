@@ -91,8 +91,8 @@ _renderDot(rowData) {
             <View
                 style={
                     rowData.id == this.state.index
-                        ? [styles.dot, { backgroundColor: "#0e1130" }]
-                        : [styles.dot, { backgroundColor: "#aeaeae" }]
+                    ? [styles.dot, { backgroundColor: "white" }]
+                    : [styles.dot, { backgroundColor: "gray" }]
                 }
             />
         </View>

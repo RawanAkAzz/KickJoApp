@@ -14,8 +14,6 @@ module.exports  = StyleSheet.create({
 
     backgroundColor:"transparent",
     borderColor:"transparent",
-    // borderWidth:1,
-    // borderRadius:5,
     // height:129
   },
   categoriesText:{

@@ -47,7 +47,14 @@ class Stadiums extends Component {
 
     return (
       // <ScrollView ref={(ref)=> {this._scrollView = ref}}>
-      <View style={{ width: dimensions.width, height:Dimensions.get('window').height/1.04}}
+      <View style={{ width: dimensions.width,  ...Platform.select({
+        ios: {
+            height:Dimensions.get('window').height/1.04,
+        },
+        android: {
+            height:Dimensions.get('window').height/0.96
+        }
+    })}}
       >
 
         <Header openDrawer={this.openDrawer} closeDrawer={this.closeDrawer} />
@@ -156,7 +163,7 @@ class Stadiums extends Component {
               >
 
 
-                <TouchableOpacity onPress={() => Actions.CoachesDesc()
+                <TouchableOpacity onPress={() => Actions.subcategorychoices()
                 }
 
                 >
