@@ -15,6 +15,7 @@ export default class BookNow extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedIndex:'',
       show:false,
       dateArr: ["S", "M", "T", "W", "Thu", "F", "Sa"],
       myWeek: [],
@@ -178,6 +179,7 @@ export default class BookNow extends Component {
   };
 
   render() {
+    console.log('selected index is:',this.state.selectedIndex)
     const { myWeek = [] } = this.state
     return (
       <View style={{ width: Dimensions.width,  ...Platform.select({
@@ -581,7 +583,7 @@ export default class BookNow extends Component {
                                 // alignItems:'center',
                                 // alignContent:'center',
                                 height: 40,
-                              }} onPress={() => this.setState({ dateClicked: index })}>
+                              }} onPress={() => this.setState({ dateClicked: index,selectedIndex:list })}>
                                 <LinearGradient
                                   colors={this.state.dateClicked === index ? ['rgb(7,37,78)', 'rgb(18,62,69)', 'rgb(55,137,48)'] : ['white', 'white']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
                                   style={{ width:Dimensions.get('window').width/10,
@@ -743,11 +745,73 @@ export default class BookNow extends Component {
                 
               </Item>
             </View>
+            <View style={{ flex: 2,flexDirection:'row', marginTop: 20, justifyContent: "center" }}>
+                              <TouchableOpacity style={{
+                                // backgroundColor: 'white',
+                                borderRadius: 40,
+                                flex: 2, marginBottom: 30, justifyContent: 'space-between',
+                                shadowOffset: {
+                                  width: 0,
+                                  height: 2
+                                },
+                                shadowOpacity: 0.2,
+                                shadowRadius: 1.84,
+                                elevation: 2,
+                                width:Dimensions.get('window').width/10,
+                                // alignItems:'center',
+                                // alignContent:'center',
+                                height: 40,
+                              }} onPress={() => this.setState({ dateClicked: index,selectedIndex:list })}>
+                                <LinearGradient
+                                  colors={ ['rgb(7,37,78)', 'rgb(18,62,69)', 'rgb(55,137,48)']}start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
+                                  style={{ width:Dimensions.get('window').width/10,
+                                  height: 40, borderRadius: 20 , textAlign:'center',alignItems:'center' }}
+                                >
+                                  <Text style={{textAlign:'center', marginTop:Dimensions.get('window').height/60}}>
+                                    {
+                                         this.state.selectedIndex.dayName
+
+                                    }
+                                  </Text>
+                                </LinearGradient>
+                              </TouchableOpacity>
+                              <TouchableOpacity style={{
+                                // backgroundColor: 'white',
+                                borderRadius: 40,
+                                flex: 2, marginBottom: 30, justifyContent: 'space-between',
+                                shadowOffset: {
+                                  width: 0,
+                                  height: 2
+                                },
+                                shadowOpacity: 0.2,
+                                shadowRadius: 1.84,
+                                elevation: 2,
+                                width:Dimensions.get('window').width/10,
+                                // alignItems:'center',
+                                // alignContent:'center',
+                                height: 40,
+                              }} onPress={() => this.setState({ dateClicked: index,selectedIndex:list })}>
+                                <LinearGradient
+                                  colors={ ['rgb(7,37,78)', 'rgb(18,62,69)', 'rgb(55,137,48)']}start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
+                                  style={{ width:Dimensions.get('window').width/10,
+                                  height: 40, borderRadius: 20 , textAlign:'center',alignItems:'center' }}
+                                >
+                                  <Text style={{textAlign:'center', marginTop:Dimensions.get('window').height/60}}>
+                                    {
+                                         this.state.selectedIndex.date
+
+                                    }
+                                  </Text>
+                                </LinearGradient>
+                              </TouchableOpacity>
+                            </View>
+
             <View style={{marginBottom:10}}>
                  <Text style={{color:'black' , fontSize:'24px', fontFamily:'AnyelirScriptBoldItalic', textAlign:'center',marginTop:20}}>
                  CHECK OUT
                  </Text>
             </View>
+            
             <LinearGradient 
                colors={['rgb(55,137,48)', 'rgb(18,62,69)', 'rgb(7,37,78)']}
 >
@@ -762,11 +826,12 @@ export default class BookNow extends Component {
                                     backgroundColor: "rgba(240,240,240,0.2) "
                                 }}
                             >
-                                <Text style={{ fontSize: 14, color: "#4a4a4a", marginLeft: 20 }}>
+                                <Text style={{ fontSize: 14, color: "#4a4a4a", marginLeft: 20 , backgroundColor:'transparent' }}>
                                 Select your payment method
                                                 </Text>
               
-              <Picker
+              <Picker 
+           
                 mode="dropdown"
                 iosIcon={<Icon name="arrow-down" style={{marginLeft:80 }} />}
                 style={{ width: undefined
@@ -812,8 +877,7 @@ export default class BookNow extends Component {
                                 </TouchableOpacity>
                                 </LinearGradient> 
                             </View>
-
-
+                          
                           </View> 
                 </View>
 
